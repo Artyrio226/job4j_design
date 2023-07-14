@@ -48,9 +48,4 @@ public class Box {
             default -> 0;
         };
     }
-
-    public static void main(String[] args) {
-        double s = 4 * Math.PI * (5 * 5);
-        System.out.println(s);
-    }
 }

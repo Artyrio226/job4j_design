@@ -1,6 +1,7 @@
 package ru.job4j.io;
 
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.StringJoiner;
 
 public class ResultFile {
@@ -20,7 +21,7 @@ public class ResultFile {
                 out.write(System.lineSeparator().getBytes());
                 sj = new StringJoiner(" ");
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

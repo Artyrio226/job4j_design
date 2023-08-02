@@ -1,13 +1,18 @@
 package ru.job4j.io;
 
+import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.StringJoiner;
 
 public class ResultFile {
     public static void main(String[] args) {
         var sj = new StringJoiner(" ");
-        try (FileOutputStream out = new FileOutputStream("data/dataresult.txt")) {
+        try (PrintWriter out = new PrintWriter(
+                new BufferedOutputStream(
+                        new FileOutputStream("data/result.txt")
+                ))) {
             for (int i = 1; i <= 9; i++) {
                 for (int j = 1; j <= 9; j++) {
                     int sum = i * j;
@@ -17,8 +22,7 @@ public class ResultFile {
                         sj.add(" " + sum);
                     }
                 }
-                out.write(sj.toString().getBytes());
-                out.write(System.lineSeparator().getBytes());
+                out.println(sj);
                 sj = new StringJoiner(" ");
             }
         } catch (IOException e) {

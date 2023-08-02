@@ -25,8 +25,15 @@ class ConfigTest {
     }
 
     @Test
-    void whenFileWithoutComment() {
+    void whenPairWithoutKey() {
         String path = "./data/test2.properties";
+        Config config = new Config(path);
+        assertThatThrownBy(config::load).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    void whenPairWithoutValue() {
+        String path = "./data/test3.properties";
         Config config = new Config(path);
         assertThatThrownBy(config::load).isInstanceOf(IllegalArgumentException.class);
     }

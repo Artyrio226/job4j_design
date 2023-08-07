@@ -1,7 +1,6 @@
 package ru.job4j.io;
 
 import java.io.File;
-import java.util.Objects;
 
 public class Dir {
     public void fileInfo(File file) {
@@ -15,7 +14,10 @@ public class Dir {
         return sum;
     }
     public static void main(String[] args) {
-        File file = new File("c:\\projects");
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Root folder is null. Usage  ROOT_FOLDER.");
+        }
+        File file = new File(args[0]);
         File file1 = new File("C:\\projects\\job4j_design\\src\\main\\java\\ru\\job4j\\io\\Config.java");
         if (!file.exists()) {
             throw new IllegalArgumentException(String.format("Not exist %s", file.getAbsoluteFile()));

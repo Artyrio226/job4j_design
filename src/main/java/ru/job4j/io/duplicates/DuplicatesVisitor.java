@@ -25,16 +25,11 @@ public class DuplicatesVisitor extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
         FileProperty fp = new FileProperty(attrs.size(), file.toFile().getName());
-        if (map.containsKey(fp)) {
-            map.computeIfPresent(fp, (a, b) -> {
+        map.computeIfAbsent(fp, k -> new LinkedList<>());
+        map.computeIfPresent(fp, (a, b) -> {
                 b.add(file);
                 return b;
             });
-        } else {
-            List<Path> tmp = new LinkedList<>();
-            tmp.add(file);
-            map.put(fp, tmp);
-        }
         return FileVisitResult.CONTINUE;
     }
 }

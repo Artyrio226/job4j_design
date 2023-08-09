@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchFiles extends SimpleFileVisitor<Path> {
-    private List<Path> list = new ArrayList<>();
+    List<Path> list = new ArrayList<>();
     private String ext;
     public SearchFiles(String condition) {
         ext = condition;

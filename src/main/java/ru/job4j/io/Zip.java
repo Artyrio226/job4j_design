@@ -4,7 +4,6 @@ import java.io.*;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
 public class Zip {
@@ -56,8 +55,7 @@ public class Zip {
         ArgsName ar = ArgsName.of(args);
         Zip zip = new Zip();
         zip.validate(ar);
-        String exc = ar.get("e");
-        List<Path> sources = Search.search(Path.of(ar.get("d")), exc);
+        List<Path> sources = Search.search(Path.of(ar.get("d")), a -> !a.toFile().getPath().endsWith(ar.get("e")));
         File o = new File(ar.get("o"));
         zip.packFiles(sources, o);
         zip.packSingleFile(

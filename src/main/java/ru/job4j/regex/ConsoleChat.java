@@ -21,7 +21,7 @@ public class ConsoleChat {
     public void run() {
         List<String> log = new ArrayList<>();
         boolean bot = true;
-        try (Scanner sc = new Scanner(System.in)) {
+        Scanner sc = new Scanner(System.in);
             while (sc.hasNext()) {
                 String text = sc.nextLine();
                 log.add(text);
@@ -43,9 +43,6 @@ public class ConsoleChat {
                 saveLog(log);
                 log = new ArrayList<>();
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
     private void answer(List<String> log) {

@@ -12,5 +12,32 @@ public class UsageLog4j {
         LOG.info("info message");
         LOG.warn("warn message");
         LOG.error("error message");
+        String name = "Petr Arsentev";
+        byte age = 33;
+        short height = 180;
+        int weight = 83;
+        long id = 57893300;
+        float distance = 412.49F;
+        double average = 84.2;
+        char group = 'G';
+        boolean married = true;
+        LOG.debug("User info name : {}"
+                        + ", age : {}"
+                        + ", height : {}"
+                        + ", weight : {}"
+                        + ", id : {}"
+                        + ", distance : {}"
+                        + ", average : {}"
+                        + ", group : {}"
+                        + ", married : {}",
+                name,
+                age,
+                height,
+                weight,
+                id,
+                distance,
+                average,
+                group,
+                married);
     }
 }

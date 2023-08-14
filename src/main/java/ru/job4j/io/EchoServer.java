@@ -9,7 +9,7 @@ import java.net.Socket;
 import java.util.Arrays;
 
 public class EchoServer {
-    private static final Logger LOG = LoggerFactory.getLogger(UsageLog4j.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(EchoServer.class.getName());
 
     private static String answer(String str) {
         String tmp = Arrays

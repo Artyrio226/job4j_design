@@ -39,5 +39,10 @@ public class UsageLog4j {
                 average,
                 group,
                 married);
+        try {
+            throw new Exception("Not supported code");
+        } catch (Exception e) {
+            LOG.error("Exception in log example", e);
+        }
     }
 }

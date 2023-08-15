@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<car awd="false" seats="4">
+    <engine number="529-378803"/>
+    <completeness>
+        <status>Conditioner</status>
+        <status>Automatic box</status>
+    </completeness>
+</car>

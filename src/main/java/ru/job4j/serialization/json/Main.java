@@ -8,11 +8,9 @@ public class Main {
         final Person person = new Person(false, 30, new Contact("11-111"),
                 new String[] {"Worker", "Married"});
 
-        /* Преобразуем объект person в json-строку. */
         final Gson gson = new GsonBuilder().create();
         System.out.println(gson.toJson(person));
 
-        /* Создаём новую json-строку с модифицированными данными*/
         final String personJson =
                 "{"
                         + "\"sex\":false,"
@@ -24,8 +22,18 @@ public class Main {
                         + "\"statuses\":"
                         + "[\"Student\",\"Free\"]"
                         + "}";
-        /* Превращаем json-строку обратно в объект */
         final Person personMod = gson.fromJson(personJson, Person.class);
         System.out.println(personMod);
+        System.out.println();
+
+        final Student student = new Student(false, 20, new Documents("3574 647751", "93-149"),
+                new String[] {"Mathematics", "Physics", "Geometry"});
+
+        final Gson gson1 = new GsonBuilder().create();
+        final String studentJson = gson1.toJson(student);
+        System.out.println(studentJson);
+
+        final Student studentMod = gson1.fromJson(studentJson, Student.class);
+        System.out.println(studentMod);
     }
 }

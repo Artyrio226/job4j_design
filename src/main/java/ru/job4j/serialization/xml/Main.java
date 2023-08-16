@@ -30,5 +30,22 @@ public class Main {
             System.out.println(result);
         }
 
+        final Car car = new Car(false, 4, new Engine("529-378803"), "Conditioner", "Automatic box");
+
+        JAXBContext contextCar = JAXBContext.newInstance(Car.class);
+        Marshaller marshallerCar = contextCar.createMarshaller();
+        marshallerCar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        String xmlCar = "";
+        try (StringWriter writer = new StringWriter()) {
+            marshallerCar.marshal(car, writer);
+            xmlCar = writer.getBuffer().toString();
+            System.out.println(xmlCar);
+        }
+
+        Unmarshaller unmarshallerCar = contextCar.createUnmarshaller();
+        try (StringReader reader = new StringReader(xmlCar)) {
+            Car result = (Car) unmarshallerCar.unmarshal(reader);
+            System.out.println(result);
+        }
     }
 }

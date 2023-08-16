@@ -15,6 +15,22 @@ public class Student {
         this.majors = majors;
     }
 
+    public boolean isBudget() {
+        return budget;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Documents getDocuments() {
+        return documents;
+    }
+
+    public String[] getMajors() {
+        return majors;
+    }
+
     @Override
     public String toString() {
         return "Student{"

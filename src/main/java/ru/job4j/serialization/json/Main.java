@@ -2,6 +2,11 @@ package ru.job4j.serialization.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,5 +40,24 @@ public class Main {
 
         final Student studentMod = gson1.fromJson(studentJson, Student.class);
         System.out.println(studentMod);
+        System.out.println();
+
+        JSONObject jsonDocuments = new JSONObject("{\"passId\":\"3574 647751\", \"contractId\":\"93-149\"}");
+
+        List<String> list = new ArrayList<>();
+        list.add("Mathematics");
+        list.add("Physics");
+        list.add("Geometry");
+        JSONArray jsonMajors = new JSONArray(list);
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("budget", student.isBudget());
+        jsonObject.put("age", student.getAge());
+        jsonObject.put("documents", jsonDocuments);
+        jsonObject.put("majors", jsonMajors);
+
+        System.out.println(jsonObject);
+
+        System.out.println(new JSONObject(student));
     }
 }

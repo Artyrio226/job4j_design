@@ -9,6 +9,14 @@ public class Documents {
         this.contractId = contractId;
     }
 
+    public String getPassId() {
+        return passId;
+    }
+
+    public String getContractId() {
+        return contractId;
+    }
+
     @Override
     public String toString() {
         return "Documents{"

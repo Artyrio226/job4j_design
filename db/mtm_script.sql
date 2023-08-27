@@ -8,7 +8,7 @@ create table person(
     name varchar(255)
 );
 
-create table person(
+create table person_restaurant(
     id serial primary key,
     name_id int references name(id),
     meal_id int references meal(id)

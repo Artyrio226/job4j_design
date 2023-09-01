@@ -11,8 +11,8 @@ create or replace function tax()     --  триггерная функция
 $$
     BEGIN
         update products
-        set price = price * 1.2;     --  плюс налог 20%
-		where id = (select id from inserted);
+        set price = price * 1.2      --  плюс налог 20%
+	    where id = (select id from inserted);
         return new;
     END;
 $$
@@ -20,7 +20,7 @@ LANGUAGE 'plpgsql';
 
 create trigger tax_trigger           --  триггер
     after insert on products
-	referencing new table as inserted
+    referencing new table as inserted
     for each statement
     execute procedure tax();
 	

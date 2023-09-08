@@ -24,10 +24,9 @@ public class ImportDB {
                 Object[] tmp = l.split(";", 2);
                 String n = tmp[0].toString().trim();
                 String e = tmp[1].toString().trim();
-                if (n.isEmpty() || e.isEmpty()) {
-                    throw new IllegalArgumentException();
+                if (!(n.isEmpty() || e.isEmpty())) {
+                    users.add(new User(n, e));
                 }
-                users.add(new User(n, e));
             }
         }
         return users;

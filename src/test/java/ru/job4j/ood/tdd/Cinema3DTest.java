@@ -67,7 +67,7 @@ public class Cinema3DTest {
     public void whenBuyOnInvalidDateThenGetException() {
         Account account = new AccountCinema();
         Cinema cinema = new Cinema3D();
-        Calendar date = new GregorianCalendar(2021, Calendar.JANUARY , 25);
+        Calendar date = new GregorianCalendar(2021, Calendar.JANUARY, 25);
         assertThatThrownBy(() -> cinema.buy(account, -1, 1, date))
                 .isInstanceOf(IllegalArgumentException.class);
     }

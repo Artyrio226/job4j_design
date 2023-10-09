@@ -29,4 +29,14 @@ class SimpleGeneratorTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Keys don't match.");
     }
+
+    @Test
+    void whenKeysAreCorrect() {
+        SimpleGenerator simpleGenerator = new SimpleGenerator();
+        String str = "I am a ${name}, Who are ${subject}?";
+        Map<String, String> map = Map.of("name", "Peter Arsentev", "subject", "you");
+        String result = simpleGenerator.produce(str, map);
+        assertThat(result)
+                .isEqualTo("I am a Peter Arsentev, Who are you?");
+    }
 }

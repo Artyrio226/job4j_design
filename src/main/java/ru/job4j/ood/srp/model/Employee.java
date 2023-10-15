@@ -1,5 +1,8 @@
 package ru.job4j.ood.srp.model;
 
+import ru.job4j.ood.srp.report.ReportXML;
+
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Calendar;
 import java.util.Objects;
 
@@ -24,6 +27,7 @@ public class Employee {
         this.name = name;
     }
 
+    @XmlJavaTypeAdapter(ReportXML.CalendarAdapterXml.class)
     public Calendar getHired() {
         return hired;
     }
@@ -32,6 +36,7 @@ public class Employee {
         this.hired = hired;
     }
 
+    @XmlJavaTypeAdapter(ReportXML.CalendarAdapterXml.class)
     public Calendar getFired() {
         return fired;
     }

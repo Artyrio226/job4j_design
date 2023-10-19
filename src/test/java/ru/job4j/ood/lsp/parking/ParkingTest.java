@@ -1,14 +1,12 @@
 package ru.job4j.ood.lsp.parking;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-@Disabled
 class ParkingTest {
 
     private Parking parking;
@@ -18,7 +16,7 @@ class ParkingTest {
 
     @BeforeEach
     void initData() {
-        parking = new Parking(7, 2);
+        parking = new Parking(2, 7);
         parking.add(t1);
         parking.add(t2);
         parking.add(t3);
@@ -63,7 +61,7 @@ class ParkingTest {
     }
 
     @Test
-    public void whenRemoveCar() throws Exception {
+    public void whenRemoveCar() {
         parking.remove(t3.getId());
         assertThat(parking.findById(t3.getId())).isNull();
     }

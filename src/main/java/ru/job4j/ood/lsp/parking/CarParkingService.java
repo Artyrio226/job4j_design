@@ -9,18 +9,18 @@ public class CarParkingService {
     }
 
     public void addCar(Car car) {
-
+        parking.add(car);
     }
 
     public int getTruckPlaces() {
-        return 0;
+        return parking.getLeftTruckSize();
     }
 
     public int getPassengerCarPlaces() {
-        return 0;
+        return parking.getLeftPassengerCarSize();
     }
 
     public void removeCar(int id) {
-
+        parking.remove(id);
     }
 }

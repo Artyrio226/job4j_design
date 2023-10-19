@@ -58,13 +58,13 @@ class ParkingTest {
 
     @Test
     public void whenFindByOwner() {
-        Car result = parking.findByName(t2.getName());
+        Car result = parking.findByOwner(t2.getOwner());
         assertThat(result).isEqualTo(t2);
     }
 
     @Test
     public void whenRemoveCar() throws Exception {
-        parking.delete(t3.getId());
+        parking.remove(t3.getId());
         assertThat(parking.findById(t3.getId())).isNull();
     }
 }

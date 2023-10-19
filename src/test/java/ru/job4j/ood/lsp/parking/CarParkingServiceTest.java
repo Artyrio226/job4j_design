@@ -14,7 +14,7 @@ class CarParkingServiceTest {
         CarParkingService service = new CarParkingService(parking);
         Car t1 = new Truck(3, "KAMAZ", "Zenin Igor");
         service.addCar(t1);
-        assertThat(parking.getTruckPlaces()).isEqualTo(4);
+        assertThat(service.getTruckPlaces()).isEqualTo(4);
     }
 
     @Test
@@ -23,7 +23,7 @@ class CarParkingServiceTest {
         CarParkingService service = new CarParkingService(parking);
         Car t1 = new Truck(2, "KAMAZ", "Zenin Igor");
         service.addCar(t1);
-        assertThat(parking.getPassengerCarPlaces()).isEqualTo(5);
+        assertThat(service.getPassengerCarPlaces()).isEqualTo(5);
     }
 
     @Test
@@ -32,7 +32,7 @@ class CarParkingServiceTest {
         CarParkingService service = new CarParkingService(parking);
         Car p1 = new PassengerCar(1, "Lada", "Savina Elena");
         service.addCar(p1);
-        assertThat(parking.getPassengerCarPlaces()).isEqualTo(6);
+        assertThat(service.getPassengerCarPlaces()).isEqualTo(6);
     }
 
     @Test

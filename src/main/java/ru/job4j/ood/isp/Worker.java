@@ -10,4 +10,5 @@ public interface Worker {
     void layingTiles();  /* класть плитку */
     void move();  /* переместить */
     void weld();  /* приварить (металл) */
+
 }

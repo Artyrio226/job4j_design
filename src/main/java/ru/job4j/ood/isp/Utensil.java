@@ -7,4 +7,5 @@ public interface Utensil {
     void warmUp();  /* подогревать */
     void boil();  /* варить */
     void stew();  /* тушить */
+
 }

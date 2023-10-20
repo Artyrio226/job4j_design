@@ -10,5 +10,4 @@ public interface CookingRecipe {
     void fryTheEggs();  /* обжарить яйца */
     void addGreens();  /* добавить зелень */
     void peelThePotatoes();  /* почистить картошку */
-
 }

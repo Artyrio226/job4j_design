@@ -1,10 +1,18 @@
 package ru.job4j.ood.isp.menu;
 
+import ru.job4j.ood.isp.menu.todoapp.Output;
+
 public class ConsoleMenuPrinter implements MenuPrinter {
+
+    Output out;
+
+    public ConsoleMenuPrinter(Output out) {
+        this.out = out;
+    }
 
     @Override
     public void print(Menu menu) {
-        menu.forEach(i -> System.out.println(retreat(i.getNumber()) + i.getNumber() + i.getName()));
+        menu.forEach(i -> out.println(retreat(i.getNumber()) + i.getNumber() + i.getName()));
     }
 
     private static String retreat(String str) {

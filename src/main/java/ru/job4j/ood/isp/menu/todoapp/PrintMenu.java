@@ -19,7 +19,7 @@ public class PrintMenu implements UserAction {
 
     @Override
     public boolean execute(Input input, Menu menu) {
-        MenuPrinter printer = new ConsoleMenuPrinter();
+        MenuPrinter printer = new ConsoleMenuPrinter(out);
         printer.print(menu);
         return true;
     }

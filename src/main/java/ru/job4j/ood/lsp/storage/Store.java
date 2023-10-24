@@ -15,4 +15,6 @@ public interface Store {
     List<Food> findByName(String key);
 
     Food findById(int id);
+
+    void clear();
 }

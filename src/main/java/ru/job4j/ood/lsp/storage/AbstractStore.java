@@ -11,6 +11,9 @@ public abstract class AbstractStore implements Store {
     protected AbstractStore() {
         this.products = new ArrayList<>();
     }
+    public AbstractStore(List<Food> list) {
+        this.products = list;
+    }
 
     public  void addProduct(Food product) {
         products.add(product);
@@ -40,6 +43,10 @@ public abstract class AbstractStore implements Store {
     public Food findById(int id) {
         int index = indexOf(id);
         return index != -1 ? products.get(index) : null;
+    }
+
+    public void clear() {
+        products.clear();
     }
 
     private int indexOf(int id) {
